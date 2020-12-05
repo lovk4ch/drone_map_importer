@@ -3,7 +3,6 @@ using UnityEngine;
 using System.IO;
 using System.Text.RegularExpressions;
 
-[ExecuteInEditMode]
 public class Importer : MonoBehaviour
 {
     private readonly Vector3 correction = new Vector3(6180800, 0, 358600);
@@ -29,7 +28,7 @@ public class Importer : MonoBehaviour
         signals = new GameObject("TrafficSignals");
         signals.transform.SetParent(map.transform);
 
-        string data = File.ReadAllText(Application.dataPath + "/Sources/sim_map.txt");
+        string data = File.ReadAllText(Application.dataPath + "/Sources/sim_map.map");
         Split(data);
     }
 
